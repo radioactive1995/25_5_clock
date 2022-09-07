@@ -4,9 +4,7 @@ export default function Button ({element, setBreakLength, setSessionLength, play
 
     const incrementHandler = () => {
         if (!playPause) {
-            console.log(playPause)
-            console.log(element)
-
+            
             if(element === 'break' && breakLength+1 <= 60)
             {
                 setBreakLength((prevVal) => prevVal + 1);
@@ -17,20 +15,12 @@ export default function Button ({element, setBreakLength, setSessionLength, play
             {
                 setSessionLength((prevVal) => prevVal + 1);
                 setCountState((prevValue) => ({count:  prevValue.type === element ? sessionLength * 60 + 60 : prevValue.count, type: prevValue.type })) 
-            }
-
-
-
-
-            //element === 'break' ? setBreakLength((prevVal) => prevVal + 1) : setSessionLength((prevVal) => prevVal + 1)
-            //setCountState((prevValue) => ({count:  prevValue.type === element ? (element === 'session' ? sessionLength + 1 : breakLength + 1) : prevValue.count, type: prevValue.type })) 
+            } 
         }
     }
 
     const decrementHandler = () => {
         if (!playPause) {
-            console.log(playPause)
-            console.log(element)
 
             if(element === 'break' && breakLength-1 > 0)
             {
@@ -42,11 +32,7 @@ export default function Button ({element, setBreakLength, setSessionLength, play
             {
                 setSessionLength((prevVal) => prevVal - 1);
                 setCountState((prevValue) => ({count:  prevValue.type === element ? sessionLength * 60 - 60 : prevValue.count, type: prevValue.type })) 
-            }
-
-
-            //element === 'break' ? setBreakLength((prevVal) => prevVal - 1) : setSessionLength((prevVal) => prevVal - 1)
-            //setCountState((prevValue) => ({count:  prevValue.type === element ? (element === 'session' ? sessionLength - 1 : breakLength - 1) : prevValue.count, type: prevValue.type })) 
+            } 
         }
     }
 
