@@ -1,38 +1,84 @@
-.App {
+.container {
+  min-width: 400px;
+  max-width: 600px;
+  width: 85%;
+  height: 300px;
+  background: rgb(65, 64, 64);
+  border-radius: 40px;
+}
+
+.display {
+  width: 90%;
+  height: 60%;
+  margin: 2% auto;
+  background: rgb(148, 148, 148);
   text-align: center;
+  color: rgb(51, 50, 50);
+  font-size: 7.5em;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.display p {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+#break-length, #session-length {
+  font-size: 1.1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#break-length p, #session-length p {
+  position: relative;
+  top: 50%;
+}
+
+#break-length p {
+  left: 35%;
+}
+
+#session-length p {
+  right: 35%;
+}
+
+#timer-label {
+  font-size: 1rem;
+  grid-column: span 3;
+}
+
+.play-pause {
+  cursor: pointer;
+  color: rgb(148, 148, 148);
+  font-size: 1.2em;
+  position: relative;
+  top: 13px;
+}
+
+.play-pause::before {
+  /* using style CSS custom property */
+  font: var(--fa-font-solid);
+  content: "\f04b";
+}
+
+.play-pause::after {
+  /* using style CSS custom property */
+  font: var(--fa-font-solid);
+  content: "\f04c";
+}
+.refresh {
+  position: relative;
+  top: 15px;
+}
+.refresh::before {
+  font: var(--fa-font-solid);
+  content: "\f021";
+  color: rgb(148, 148, 148)
 }

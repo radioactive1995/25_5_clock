@@ -1,0 +1,36 @@
+  .arrow-down::before {
+    /* using style CSS custom property */
+    font: var(--fa-font-solid);
+    content: "\f063";
+    margin-right: 3px;
+    font-size: 1.2em;
+    padding-left: 1px
+  }
+
+  .arrow-up::before {
+    /* using style CSS custom property */
+    font: var(--fa-font-solid);
+    content: "\f062";
+    margin-left: 3px;
+    font-size: 1.2em;
+    padding-right: 1px
+  }
+
+
+
+.button-container {
+    color: rgb(51, 50, 50);
+    width: 10%;
+    min-width: 100px;
+    height: 10%;
+    background: rgb(148, 148, 148);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.button-container p {
+    margin: 15px 0 15px 0;
+}
