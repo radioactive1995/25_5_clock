@@ -1,6 +1,6 @@
 import './Button.css'
 
-export default function Button ({element, setBreakLength, setSessionLength, playPause, setCountState, sessionLength, breakLength}) {
+export default function Button ({element, setBreakLength, setSessionLength, playPause, setCountState, sessionLength, breakLength, label}) {
 
     const incrementHandler = () => {
         if (!playPause) {
@@ -10,13 +10,13 @@ export default function Button ({element, setBreakLength, setSessionLength, play
             if(element === 'break' && breakLength+1 <= 60)
             {
                 setBreakLength((prevVal) => prevVal + 1);
-                setCountState((prevValue) => ({count:  prevValue.type === element ? breakLength + 1 : prevValue.count, type: prevValue.type })) 
+                setCountState((prevValue) => ({count:  prevValue.type === element ? breakLength * 60 + 60 : prevValue.count, type: prevValue.type })) 
             }
 
             else if(element === 'session' && sessionLength+1 <= 60)
             {
                 setSessionLength((prevVal) => prevVal + 1);
-                setCountState((prevValue) => ({count:  prevValue.type === element ? sessionLength + 1 : prevValue.count, type: prevValue.type })) 
+                setCountState((prevValue) => ({count:  prevValue.type === element ? sessionLength * 60 + 60 : prevValue.count, type: prevValue.type })) 
             }
 
 
@@ -35,13 +35,13 @@ export default function Button ({element, setBreakLength, setSessionLength, play
             if(element === 'break' && breakLength-1 > 0)
             {
                 setBreakLength((prevVal) => prevVal - 1);
-                setCountState((prevValue) => ({count:  prevValue.type === element ? breakLength - 1 : prevValue.count, type: prevValue.type })) 
+                setCountState((prevValue) => ({count:  prevValue.type === element ? breakLength * 60 - 60 : prevValue.count, type: prevValue.type })) 
             }
 
             else if(element === 'session' && sessionLength-1 > 0)
             {
                 setSessionLength((prevVal) => prevVal - 1);
-                setCountState((prevValue) => ({count:  prevValue.type === element ? sessionLength - 1 : prevValue.count, type: prevValue.type })) 
+                setCountState((prevValue) => ({count:  prevValue.type === element ? sessionLength * 60 - 60 : prevValue.count, type: prevValue.type })) 
             }
 
 
@@ -53,7 +53,7 @@ export default function Button ({element, setBreakLength, setSessionLength, play
     return (
         <div className='button-container'>
             <div id={`${element}-decrement`} className='icon arrow-down' onClick={decrementHandler}></div>
-            <p>{element}</p>
+            <p id={`${element}-label`}>{label}</p>
             <div id={`${element}-increment`} className='icon arrow-up' onClick={incrementHandler}></div>
         </div>
     )
