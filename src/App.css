@@ -47,7 +47,7 @@
 #break-length, #session-length {
   font-size: 1.1rem;
   position: relative;
-  top: 56%;
+  top: 62px;
 }
 
 #timer-label {
@@ -87,5 +87,9 @@
 @media only screen and (max-width: 400px) {
   .display {
     font-size: 5em;
+  }
+
+  #break-length, #session-length {
+    top: 61px;
   }
 }
