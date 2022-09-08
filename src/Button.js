@@ -38,9 +38,9 @@ export default function Button ({element, setBreakLength, setSessionLength, play
 
     return (
         <div className='button-container'>
-            <div id={`${element}-decrement`} className='icon arrow-down' onClick={decrementHandler}></div>
+            <div id={`${element}-decrement`} className='icon arrow-down' onClick={decrementHandler} style={playPause ? {'cursor' : 'not-allowed'} : {}}></div>
             <p id={`${element}-label`}>{label}</p>
-            <div id={`${element}-increment`} className='icon arrow-up' onClick={incrementHandler}></div>
+            <div id={`${element}-increment`} className='icon arrow-up' onClick={incrementHandler} style={playPause ? {'cursor' : 'not-allowed'} : {}}></div>
         </div>
     )
 }

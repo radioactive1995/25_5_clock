@@ -1,34 +1,41 @@
+  .arrow-down, .arrow-up {
+    cursor: pointer;
+  }
+  
+  
   .arrow-down::before {
     /* using style CSS custom property */
     font: var(--fa-font-solid);
-    content: "\f063";
-    margin-right: 3px;
+    content: "\f060";
     font-size: 1.2em;
-    padding-left: 1px
+    position: relative;
+    top: 48px;
+    left: 15px;
   }
 
   .arrow-up::before {
     /* using style CSS custom property */
     font: var(--fa-font-solid);
-    content: "\f062";
-    margin-left: 3px;
+    content: "\f061";
     font-size: 1.2em;
-    padding-right: 1px
+    position: relative;
+    top: 48px;
+    right: 15px;
   }
 
 
 
 .button-container {
-    color: rgb(51, 50, 50);
     width: 10%;
     min-width: 100px;
     height: 10%;
-    background: rgb(148, 148, 148);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     text-align: center;
+    font-size: 1rem;
+    margin: 0 auto;
 }
 
 .button-container p {

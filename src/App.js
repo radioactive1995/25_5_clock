@@ -62,16 +62,15 @@ function App() {
   return (
     <div className="container">
       <div className='display'>
-        <div id='break-length'>{breakLength}</div>
-        <div id="time-left" style={countState.count < 60 ? {color: 'rgb(119, 46, 99)'} : {}}><p>{minutes}:{seconds}</p></div>
-        <div id='session-length'>{sessionLength}</div>
-        <div id='timer-label'>{timeLabel}</div>
+        <div ><p id='break-length'>{breakLength}</p><Button element={'break'} label={'Break Length'} setBreakLength={setBreakLength} playPause={playPause} setCountState={setCountState} sessionLength={sessionLength} breakLength={breakLength} /></div>
+        <div id="time-left" style={countState.count < 60 ? {color: 'rgb(255, 0, 0, 0.85)'} : {}}><p>{minutes}:{seconds}</p></div>
+        <div ><p id='session-length'>{sessionLength}</p><Button element={'session'} label={'Session Length'} setSessionLength={setSessionLength} playPause={playPause} setCountState={setCountState} sessionLength={sessionLength} breakLength={breakLength} /></div>
+        
+        <div id='timer-label'><p>{timeLabel}</p></div>
         </div>
       <div className='buttons'>
-      <Button element={'break'} label={'Break Length'} setBreakLength={setBreakLength} playPause={playPause} setCountState={setCountState} sessionLength={sessionLength} breakLength={breakLength} />
       <div id='start_stop' className='icon play-pause' onClick={playPauseHandler}></div>
       <div id='reset' className='icon refresh' onClick={refreshHandler}></div>
-      <Button element={'session'} label={'Session Length'} setSessionLength={setSessionLength} playPause={playPause} setCountState={setCountState} sessionLength={sessionLength} breakLength={breakLength} />
       </div>
       <audio id="beep" src='https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav' />
     </div>
